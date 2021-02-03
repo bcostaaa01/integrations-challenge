@@ -18,8 +18,8 @@ const StripeConnection: ProcessorConnection<APIKeyCredentials, CardDetails> = {
   website: 'stripe.com',
 
   configuration: {
-    accountId: '...Find a unique ID for the accounnt annd put it here...',
-    apiKey: '...Paste your stripe API key here...',
+    accountId: 'acct_1IGi7ZFHttg1tWRe',
+    apiKey: 'pk_test_51IGi7ZFHttg1tWRe6ymenOYpoeUm3GyI4gnEI4epktG8koOdYBqZPcgR3EWF60NM69ae3uEYhwoe2jGE3NcjhkIu00kx4LOsil',
   },
 
   /**
@@ -29,7 +29,8 @@ const StripeConnection: ProcessorConnection<APIKeyCredentials, CardDetails> = {
   authorize(
     request: RawAuthorizationRequest<APIKeyCredentials, CardDetails>,
   ): Promise<ParsedAuthorizationResponse> {
-    throw new Error('Method Not Implemented');
+
+    //throw new Error('Method Not Implemented');
   },
 
   /**
@@ -39,7 +40,8 @@ const StripeConnection: ProcessorConnection<APIKeyCredentials, CardDetails> = {
   capture(
     request: RawCaptureRequest<APIKeyCredentials>,
   ): Promise<ParsedCaptureResponse> {
-    throw new Error('Method Not Implemented');
+
+    //throw new Error('Method Not Implemented');
   },
 
   /**
@@ -49,7 +51,8 @@ const StripeConnection: ProcessorConnection<APIKeyCredentials, CardDetails> = {
   cancel(
     request: RawCancelRequest<APIKeyCredentials>,
   ): Promise<ParsedCancelResponse> {
-    throw new Error('Method Not Implemented');
+    
+    //throw new Error('Method Not Implemented');
   },
 };
 
