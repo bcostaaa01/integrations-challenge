@@ -21,9 +21,12 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "curl": "^0.1.4",
+    "curlrequest": "^1.0.1",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
-    "opn": "^6.0.0"
+    "opn": "^6.0.0",
+    "request": "^2.81.0"
   },
   "scripts": {
     "start:processors": "ts-node connections/main.ts",

@@ -12,6 +12,8 @@ import {
 
 import HttpClient from '../common/HTTPClient';
 
+import curlrequest from '../node_modules/curlrequest';
+
 const StripeConnection: ProcessorConnection<APIKeyCredentials, CardDetails> = {
   name: 'STRIPE',
 
@@ -30,6 +32,17 @@ const StripeConnection: ProcessorConnection<APIKeyCredentials, CardDetails> = {
     request: RawAuthorizationRequest<APIKeyCredentials, CardDetails>,
   ): Promise<ParsedAuthorizationResponse> {
 
+    var curl = require('curlrequest');
+
+    curl.request(
+      {
+        method: 'POST',
+        amount: 100,
+        currencyCode: 'GBP',
+      }, {url: 'https://api.stripe.com/v1/payment_intents/pi_1IGiE8FHttg1tWRexmtJGFT3/confirm'});
+
+      return curl;
+
     //throw new Error('Method Not Implemented');
   },
 
@@ -41,6 +54,16 @@ const StripeConnection: ProcessorConnection<APIKeyCredentials, CardDetails> = {
     request: RawCaptureRequest<APIKeyCredentials>,
   ): Promise<ParsedCaptureResponse> {
 
+    var curl = require('curlrequest');
+
+    curl.request(
+      {
+        method: 'POST',
+        amount_to_capture: 100,
+      }, {url: 'https://api.stripe.com/v1/payment_intents/pi_1EUnIAAIPu2ggEaOKCCgOEQs/capture'});
+
+      return curl;
+
     //throw new Error('Method Not Implemented');
   },
 
@@ -51,7 +74,16 @@ const StripeConnection: ProcessorConnection<APIKeyCredentials, CardDetails> = {
   cancel(
     request: RawCancelRequest<APIKeyCredentials>,
   ): Promise<ParsedCancelResponse> {
-    
+
+    var curl = require('curlrequest');
+
+    curl.request(
+      {
+        method: 'POST',
+      }, {url: 'https://api.stripe.com/v1/payment_intents/pi_1IGiE8FHttg1tWRexmtJGFT3/cancel'});
+
+      return curl;
+
     //throw new Error('Method Not Implemented');
   },
 };
